@@ -9,7 +9,8 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { APP_ROUTING } from './app.routes';
 import { NoImagePipe } from './pipes/no-image.pipe';
-import { CardComponent } from './components/shared/card/card.component';
+import { CardsComponent } from './components/shared/cards/cards.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './components/shared/card/card.component';
     ArtistComponent,
     NavbarComponent,
     NoImagePipe,
-    CardComponent
+    CardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
