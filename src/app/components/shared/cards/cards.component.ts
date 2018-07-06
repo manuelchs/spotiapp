@@ -7,21 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  @Input() items:any;
-  constructor(private router:Router) { }
+  @Input() items: any;
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  verArtista( item:any ){
+  verArtista( item: any ) {
     let idArtist;
-    if(item.type == 'artist'){
+    if ( item.type === 'artist') {
       idArtist = item.id;
-    } else{
+    } else {
       idArtist = item.artists[0].id;
     }
     // console.log(idArtist)
-    this.router.navigate(['/artist',idArtist]);
+    this.router.navigate( ['/artist', idArtist] );
   }
 
 }

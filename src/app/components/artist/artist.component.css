@@ -1,0 +1,20 @@
+.break-line-two{
+    margin-bottom: 2rem;
+}
+
+.songs-table{
+    width: 100%;
+}
+.songs-table > tbody > tr{
+    border-bottom: 1px solid black;
+}
+.songs-table > tbody > tr > td{
+    padding: 8px;
+}
+.songs-table > tbody > tr > td > img{
+    width: 48px;
+    height: auto;
+}
+.songs-table > tbody > tr > td.name-song{
+    width: 100%;
+}

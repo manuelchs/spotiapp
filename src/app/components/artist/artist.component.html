@@ -1,3 +1,28 @@
-<p>
-  artist works!
-</p>
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading" class="break-line-two row">
+  <div class="col-2">
+    <img class="img-thumbnail img-circle" [src]="artist.images | noImage" alt="">
+  </div>
+  <div class="col">
+    <h3>{{artist.name}}</h3>
+    <a class="btn btn-outline-success" [href]="artist.external_urls.spotify" target="_black">See on Spotify</a>
+    <p class="my-3 text-muted">{{artist.followers.total | number}} followers</p>
+  </div>
+  <div class="col-4">
+    <button routerLink="/search" class="btn btn-outline-light">GO BACK</button>
+  </div>
+</div>
+
+<h2 class="break-line-two">Popular songs</h2>
+<table class="songs-table">
+  <tbody>
+    <tr *ngFor="let track of topTracks">
+      <td>
+          <iframe [src]="track.uri | secureDom:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </td>
+      <td><img [src]="track.album.images | noImage" alt=""></td>
+      <td class="name-song">{{track.name}}</td>
+      <td class="text-muted">{{track.duration_ms | date:'mm:ss'}}</td>
+    </tr>
+  </tbody>
+</table>
