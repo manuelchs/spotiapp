@@ -18,9 +18,10 @@ export class CardsComponent implements OnInit {
     if(item.type == 'artist'){
       idArtist = item.id;
     } else{
-      idArtist = item.artist[0].id;
+      idArtist = item.artists[0].id;
     }
-    console.log(idArtist);
+    // console.log(idArtist)
+    this.router.navigate(['/artist',idArtist]);
   }
 
 }
